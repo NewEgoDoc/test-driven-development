@@ -2,7 +2,7 @@ package com.example.tdd.domain;
 
 import java.util.Objects;
 
-public abstract class Money {
+public class Money {
     protected int amount;
     protected String currency;
 
@@ -19,7 +19,9 @@ public abstract class Money {
         return new Franc(amount, "CHF");
     }
 
-    abstract Money times(int multiplier);
+    Money times(int multiplier) {
+        return null;
+    }
 
     String currency(){
         return currency;
@@ -30,5 +32,10 @@ public abstract class Money {
         Money money = (Money) o;
         return  amount == money.amount &&
                 getClass().equals(money.getClass());
+    }
+
+    @Override
+    public String toString() {
+        return amount + " " +currency;
     }
 }
