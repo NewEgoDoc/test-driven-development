@@ -2,8 +2,9 @@ package com.example.tdd.domain;
 
 import java.util.Objects;
 
-public class Money {
+public abstract class Money {
     protected int amount;
+    abstract Money times(int multiplier);
 
     @Override
     public boolean equals(Object o) {
