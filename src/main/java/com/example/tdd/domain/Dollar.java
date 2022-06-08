@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Dollar {
 
-    int amount;
+    int amount = 10;
 
     public Dollar(int amount) {
 
