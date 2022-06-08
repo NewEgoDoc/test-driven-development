@@ -2,7 +2,7 @@ package com.example.tdd.domain;
 
 import java.util.Objects;
 
-public class Dollar {
+public class Dollar extends Money{
 
     private int amount;
 
