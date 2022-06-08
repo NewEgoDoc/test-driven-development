@@ -31,7 +31,7 @@ public class Money {
     public boolean equals(Object o) {
         Money money = (Money) o;
         return  amount == money.amount &&
-                getClass().equals(money.getClass());
+                currency().equals(money.currency);
     }
 
     @Override
