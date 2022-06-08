@@ -6,8 +6,8 @@ public abstract class Money {
     protected int amount;
     protected String currency;
 
-    public static Money dollar(int i) {
-        return null;
+    public static Money dollar(int amount) {
+        return new Dollar(amount,"USD");
     }
 
     public static Money franc(int amount) {

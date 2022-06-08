@@ -4,19 +4,17 @@ import java.util.Objects;
 
 public class Dollar extends Money{
 
-    private String currency;
-
-    public Dollar(int amount) {
+    public Dollar(int amount, String currency) {
         this.amount = amount;
-        this.currency = "USD";
+        this.currency = currency;
     }
 
     public static Dollar dollar(int amount) {
-        return new Dollar(amount);
+        return new Dollar(amount,"USD");
     }
 
     public Money times(int multiplier) {
-        return new Dollar(amount * multiplier);
+        return Money.dollar(amount * multiplier);
     }
 
     @Override

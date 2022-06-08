@@ -9,6 +9,10 @@ public class Franc extends Money{
         this.currency = currency;
     }
 
+    public static Franc franc(int amount) {
+        return new Franc(amount, null);
+    }
+
     public Money times(int multiplier) {
         return Money.franc(amount * multiplier);
     }
