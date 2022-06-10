@@ -11,8 +11,8 @@ public class Bank {
     }
 
     int rate(String from, String to){
-        int rate = (from.equals("CHF") && to.equals("USD")) ? 2 : 1;
-        return rate;
+        Integer rate = (from.equals("CHF") && to.equals("USD")) ? 2 : 1;
+        return rate.intValue();
     }
 
     public void addRate(String from, String to, int rate) {
