@@ -15,4 +15,9 @@ public class Sum implements Expression{
         return new Money(amount, to);
     }
 
+    @Override
+    public Expression plus(Expression addend) {
+        return new Sum(this, addend);
+    }
+
 }
