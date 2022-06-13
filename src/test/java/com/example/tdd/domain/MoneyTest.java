@@ -91,5 +91,7 @@ public class MoneyTest {
         Expression tenFrancs = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF","USD",2);
+        Expression result = bank.reduce(fiveBucks.plus(tenFrancs), "USD");
+        assertEquals(Money.dollar(10),result);
     }
 }
