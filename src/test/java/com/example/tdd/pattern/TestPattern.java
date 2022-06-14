@@ -1,6 +1,7 @@
 package com.example.tdd.pattern;
 
 
+import org.apache.catalina.Server;
 import org.apache.tomcat.jni.Buffer;
 import org.junit.jupiter.api.Test;
 
@@ -11,7 +12,7 @@ public class TestPattern {
 
     @Test
     public void testsocket(){
-
+        Server writer = Server(defaultPort(), "abc");
         Socket reader = Socket("localhost", defaultPort());
         Buffer reply = reader.contents();
 
