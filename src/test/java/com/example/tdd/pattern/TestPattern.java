@@ -15,7 +15,6 @@ public class TestPattern {
         Server writer = Server(defaultPort(), "abc");
         Socket reader = Socket("localhost", defaultPort());
         Buffer reply = reader.contents();
-
         assertTrue(reader.isClosed());
         assertEquals("abc", reply.contents());
     }
