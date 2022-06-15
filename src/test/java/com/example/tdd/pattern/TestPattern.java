@@ -29,4 +29,23 @@ public class TestPattern {
         Money result = bank.convert(new Note(100, "USD"), "GBP");
         assertEquals(new Note(100/2*(1-0.015), "GBP"), result);
     }
+
+    RecordStore store;
+    public void setUp(){
+        store = new RecordScore.openRecordStore("testing", true);
+    }
+
+    public void tearDown(){
+        RecordStore.deleteRecordStore("testing");
+    }
+
+    @Test
+    public void testStore(){
+        int id = store.addREcord(new byte[]{5,6},0,2);
+        assertEquals(2, store.getRecordSize(id));
+        byte[] buffer = new byte[2];
+        assertEquals(2,store.getRecord(id, buffer, 0));
+        assertEquals(5,buffer[0]);
+        assertEquals(6,buffer[1]);
+    }
 }
